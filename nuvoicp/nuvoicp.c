@@ -318,15 +318,17 @@ void usage(void)
 		"\t[-r <filename> read entire flash to file]\n"
 		"\t[-w <filename> write file to APROM/entire flash (if LDROM is disabled)]\n"
 		"\t[-l <filename> write file to LDROM, enable LDROM, enable boot from LDROM]\n"
-		"Pinout:\n"
-		"         [...]\n"
-		"        G19 G16\n"
-		"        CLK DAT\n"
-		"        GND RST\n"
-		"    ________\n"
-		"   |   USB  |\n"
-		"   |  PORTS |\n"
-		"   |________|\n");
+		"\nPinout:\n\n"
+		"                           40-pin header J8\n"
+		" connect 3.3V of MCU ->    3V3  (1) (2)  5V\n"
+		"                                 [...]\n"
+		"        connect CLK ->  GPIO26 (37) (38) GPIO20 <- connect DAT\n"
+		"        connect GND ->     GND (39) (40) GPIO21 <- connect RST\n\n"
+		"                      ________\n"
+		"                     |   USB  |\n"
+		"                     |  PORTS |\n"
+		"                     |________|\n\n"
+		"Please refer to the 'pinout' command on your RPi\n");
 	exit(1);
 }
 
